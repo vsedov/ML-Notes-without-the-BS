@@ -1,0 +1,13 @@
+@document.meta
+title: readme
+description: 
+authors: viv
+categories: 
+created: 2022-11-22
+updated: 2022-11-22
+version: 0.0.17
+@end
+
+* Reason/Purpose
+  - [!] Contains quick fire notes from lectures and other resources that i will put in the notes without the bs tex
+  file
