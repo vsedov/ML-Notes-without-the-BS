@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Types of Learning}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Supervised Learning}{2}{}%
+\contentsline {paragraph}{Features}{2}{}%
+\contentsline {paragraph}{Protocols used in supervised Learning}{3}{}%
+\contentsline {section}{\numberline {2}Introduction To NN}{4}{}%
+\contentsline {subsection}{\numberline {2.1}How does it work ? }{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Step by step guide on how NN works}{4}{}%

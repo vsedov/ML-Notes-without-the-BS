@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  22 NOV 2022 13:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  19 DEC 2022 17:48
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -698,24 +698,118 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (/opt/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (build/ML_without_the_bs.toc)
+\tf@toc=\write5
+\openout5 = `ML_without_the_bs.toc'.
+
+ [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{/opt/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (build/ML_without_the_bs.aux) ) 
+{/opt/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+./ML_without_the_bs.tex:110: Undefined control sequence.
+l.110 	\item Each feature can be \italic
+                                        {descrete} or \italic{continuous} $ ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ML_without_the_bs.tex:110: Undefined control sequence.
+l.110 ...ature can be \italic{descrete} or \italic
+                                                  {continuous} $ [0, \infty )$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ML_without_the_bs.tex:115: Undefined control sequence.
+l.115 \italic
+             {Batch} and \italic{Online} | Just google this, the explanation...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ML_without_the_bs.tex:115: Undefined control sequence.
+l.115 \italic{Batch} and \italic
+                                {Online} | Just google this, the explanation...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ML_without_the_bs.tex:117: Undefined control sequence.
+l.117 \subsubsectin
+                   {Batch Learning}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 124.
+
+./ML_without_the_bs.tex:127: Undefined control sequence.
+l.127 	\italic
+              {has a model}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 130.
+./ML_without_the_bs.tex:133: Undefined control sequence.
+l.133 	\italic
+              {No model}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 139.
+ [4]
+./ML_without_the_bs.tex:200: Undefined control sequence.
+l.200 \italic
+             {This is transduction : No model was formed}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[5] (build/ML_without_the_bs.aux) ) 
 Here is how much of TeX's memory you used:
- 28748 strings out of 474975
- 732876 string characters out of 5750796
- 1417096 words of memory out of 5000000
- 49757 multiletter control sequences out of 15000+600000
- 476972 words of font info for 56 fonts, out of 8000000 for 9000
+ 28796 strings out of 474975
+ 733505 string characters out of 5750796
+ 1428096 words of memory out of 5000000
+ 49791 multiletter control sequences out of 15000+600000
+ 482714 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,6n,103p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on build/ML_without_the_bs.pdf (1 page, 30281 bytes).
+{/opt/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on build/ML_without_the_bs.pdf (5 pages, 161684 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
