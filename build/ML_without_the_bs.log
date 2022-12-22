@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  22 DEC 2022 07:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  22 DEC 2022 07:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1143,6 +1143,16 @@ Underfull \hbox (badness 7869) in paragraph at lines 14--14
  [][] [][]\T1/ptm/m/n/10 Conformity Mea-sure for 
  []
 
+
+Underfull \hbox (badness 3189) in paragraph at lines 22--22
+ [][] [][]\T1/ptm/m/n/10 Using Mod-i-fied com-pe-ti- 
+ []
+
+
+Underfull \hbox (badness 5985) in paragraph at lines 23--23
+ [][] [][]\T1/ptm/m/n/10 Modified Rank-ing Al-go- 
+ []
+
 )
 \tf@toc=\write6
 \openout6 = `ML_without_the_bs.toc'.
@@ -1513,7 +1523,82 @@ Overfull \hbox (0.69147pt too wide) in paragraph at lines 220--298
 []
  []
 
-[10]) [11
+[10]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 376.
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+[][][]\T1/ptm/b/n/10 Definition IV.1[]--Non Con-for-mity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+[]\T1/ptm/m/n/10 Non-con-for-mity mea-sures:
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 377--379
+\T1/ptm/m/n/10 set. This can be used to con-struct
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 377--379
+\T1/ptm/m/n/10 of un-cer-tainty around the pre-dicted
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 377--379
+\T1/ptm/m/n/10 value. Non-con-for-mity mea-sures (1):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+\T1/ptm/m/n/10 in the same way as con-for-mity
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 377--379
+\T1/ptm/m/n/10 mea-sures, but their in-ter-pre-ta-tion is
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 377--379
+\T1/ptm/m/n/10 mea-sure how "con-form-ing" a new
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 377--379
+\T1/ptm/m/n/10 data point is to the train-ing set,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+\T1/ptm/m/n/10 non-con-for-mity mea-sures mea-sure
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+[]\T1/ptm/m/n/10 Given a train-ing set of data points
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 381--382
+\OML/ntxmi/m/it/10 z[]; z[]; :::; z[]$ \T1/ptm/m/n/10 and a new test sam-ple $\OML/ntxmi/m/it/10 x\LMS/ntxsy/m/n/10 ^^C$\T1/ptm/m/n/10 ,
+ []
+
+[11]
+./conformal.tex:383: You can't use `macro parameter character #' in math mode.
+<argument> ##
+             {i = 1, ..., n+1 | \alpha _y^i \geq \alpha _y^{n+1}}
+l.383 ...1 | \alpha_y^i \geq \alpha_y^{n+1}}}{n+1}
+                                                   $$
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+) [12
 
 ]
 
@@ -1529,21 +1614,21 @@ Before submitting the final camera ready copy, remember to:
 
 (build/ML_without_the_bs.aux (build/basic.aux) (build/nna.aux) (build/conformal.aux))
 Package rerunfilecheck Info: File `ML_without_the_bs.out' has not changed.
-(rerunfilecheck)             Checksum: 28480366081F464118EE6DAC06081102;2141.
+(rerunfilecheck)             Checksum: A9B2BB4417048A5B2918F7E844A377AA;2778.
  ) 
 Here is how much of TeX's memory you used:
- 40044 strings out of 474975
- 910081 string characters out of 5750796
+ 40052 strings out of 474975
+ 910182 string characters out of 5750796
  1597931 words of memory out of 5000000
- 60797 multiletter control sequences out of 15000+600000
+ 60800 multiletter control sequences out of 15000+600000
  597784 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,103p,728b,1768s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/opt/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/opt/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on build/ML_without_the_bs.pdf (11 pages, 160958 bytes).
+Output written on build/ML_without_the_bs.pdf (12 pages, 166074 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

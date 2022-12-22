@@ -341,3 +341,51 @@ $$ p(\text{+1}) = \frac{6}{7} = 0.857 $$
 Similarly, the conformity score for the label -1 (0.707) is the smallest conformity score and gets a rank of 1. The p-value for the label -1 is calculated as follows:
 $$ p(\text{-1}) = \frac{1}{7} = 0.143 $$
 This is why the p-values for the labels +1 and -1 are 6/7 and 1/7, respectively.
+
+\subsection{Using Modified competition ranking}
+Modified competition ranking is a method of ranking items or individuals based on their performance in a competition. It is similar to traditional competition ranking, but it takes into account the strength of the competition.
+
+To calculate modified competition ranking, the following steps are typically followed:
+\begin{itemize}
+	\item Calculate the average score of each participant in the competition.
+	\item Calculate the average score of the entire competition.
+	\item Calculate the difference between the average score of each participant and the average score of the competition.
+	\item Rank the participants based on this difference, with the highest difference ranked first.C
+\end{itemize}
+For example, consider a competition with three participants who score the following points:
+
+\begin{itemize}
+	\item Participant 1: 10 points
+	\item Participant 2: 20 points
+	\item Participant 3: 30 points
+\end{itemize}
+
+The average score of the competition is 20 points. The differences between each participant's average score and the average score of the competition are as follows:
+
+\begin{itemize}
+	\item Participant 1: 10 - 20 = -10
+	\item Participant 2: 20 - 20 = 0
+	\item  Participant 3: 30 - 20 = 10
+\end{itemize}
+This method of ranking takes into account the strength of the competition and can be useful in situations where the competition is particularly competitive or where there is a wide range of scores. It is often used in sports, where the strength of the competition can vary significantly from one match or tournament to another.
+
+\subsection{Modified Ranking Algorithm on New solution}
+Consider the following using modified ranking to sort the conformity scores:
+
+\section{Non Conformity}
+\begin{definition}[Non Conformity]
+	Nonconformity measures: Nonconformity measures are used in conjunction with conformal prediction to measure how "strange" (or different) a new data point is from the training set. This can be used to construct prediction intervals that reflect the level of uncertainty around the predicted value.
+	Nonconformity measures (1): Nonconformity measures are defined in the same way as conformity measures, but their interpretation is different. While conformity measures measure how "conforming" a new data point is to the training set, nonconformity measures measure how "strange" or different it is. The formula for computing p-values using nonconformity measures is similar to the formula for conformity measures, but with the inequality sign reversed.
+\end{definition}
+\begin{itemize}
+	\item Given a training set of data points $z_1, z_2, ..., z_n$ and a new test sample $x*$, we first compute the conformity scores, or p-values, for each possible label $y$ for the test sample.
+	\item The conformity score for a particular label $y$ is calculated as the number of training data points with conformity scores less than or equal to the conformity score of the test sample, divided by the total number of training data points plus one. This is represented by the formula:
+	      $$ p(y) = \frac{#{i = 1, ..., n+1 | \alpha_y^i \geq \alpha_y^{n+1}}}{n+1} $$
+
+	      where $\alpha_y^1, ..., \alpha_y^n, \alpha_y^{n+1}$ are the conformity scores corresponding to $z_1, ..., z_n, (x*, y)$.
+\end{itemize}
+In conformity measures, the measure is used to determine how closely a sample conforms to the rest of the training data. This is typically used in classification tasks, where the goal is to predict the class label of a sample based on its similarity to the training data. The conformity measure is used to determine the probability that the sample belongs to a particular class.
+
+On the other hand, nonconformity measures are used to determine how unusual or different a sample is from the rest of the training data. This is typically used in regression tasks, where the goal is to predict a continuous value based on the training data. The nonconformity measure is used to determine the probability that the sample is an outlier or an unusual sample, rather than one that conforms to the general trend of the training data.
+
+The formula for computing p-values for nonconformity measures is similar to that for conformity measures, with the main difference being that the inequality is reversed. In the formula for nonconformity measures, p(y) is the probability that the sample belongs to class y, and the nonconformity measure is used to count the number of samples that are more unusual (have a higher nonconformity measure) than the test sample, and divide by the total number of samples in the training set. This gives the probability that the test sample belongs to class y, given its unusualness compared to the rest of the training data.
