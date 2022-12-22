@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  22 DEC 2022 06:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.2)  22 DEC 2022 07:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,45 +1000,45 @@ Package: flushend 2021/10/04 v4.0 Balancing columns in twocolumn mode
  (/opt/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex (/opt/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex)) (build/ML_without_the_bs.aux (build/basic.aux) (build/nna.aux) (build/conformal.aux))
 \openout1 = `ML_without_the_bs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 78.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 78.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 79.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 79.
  (/opt/texlive/2022/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 78.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 78.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 79.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 79.
  (/opt/texlive/2022/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 78.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 78.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 79.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 79.
  (/opt/texlive/2022/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 78.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 78.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 79.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 79.
 
 (/opt/texlive/2022/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 -- Lines per column: 49 (approximate, difference = 3.5302pt).
 *geometry* driver: auto-detecting
@@ -1094,12 +1094,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/opt/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 78.
-LaTeX Info: Command `\ddddot' is already robust on input line 78.
+LaTeX Info: Command `\dddot' is already robust on input line 79.
+LaTeX Info: Command `\ddddot' is already robust on input line 79.
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
 
-Package hyperref Info: Link coloring OFF on input line 78.
+Package hyperref Info: Link coloring OFF on input line 79.
 (build/ML_without_the_bs.out) (build/ML_without_the_bs.out)
 \@outlinefile=\write5
 \openout5 = `ML_without_the_bs.out'.
@@ -1397,31 +1397,125 @@ Package mdframed Info: mdframed detected package amsthm
 Underfull \vbox (badness 6236) has occurred while \output is active []
 
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
 
 
-./conformal.tex:167: LaTeX Error: \begin{document} ended by \end{center}.
+./conformal.tex:171: LaTeX Error: \begin{document} ended by \end{center}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 \end{center}
+l.171 \end{center}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./conformal.tex:167: Extra \endgroup.
+./conformal.tex:171: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.167 \end{center}
+l.171 \end{center}
                   
 Things are pretty mixed up, but I think the worst is over.
 
-) [9]
+
+Underfull \vbox (badness 4328) has occurred while \output is active []
+
+ [9]
+
+./conformal.tex:292: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 	(−
+           1, 1)  & −1    & 1.414                       \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./conformal.tex:292: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 	(−1, 1)  & −
+                       1    & 1.414                       \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./conformal.tex:293: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 	(−
+           1, −1) & −1    & 0.707                       \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./conformal.tex:293: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 	(−1, −
+                 1) & −1    & 0.707                       \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./conformal.tex:293: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 	(−1, −1) & −
+                         1    & 0.707                       \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./conformal.tex:294: LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.294 	(0, 1)   & −
+                     1    & 1                           \\ [1ex]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--298
+| []
+ []
+
+
+Overfull \hbox (0.69147pt too wide) in paragraph at lines 220--298
+[]
+ []
+
+[10]) [11
+
+]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1438,18 +1532,18 @@ Package rerunfilecheck Info: File `ML_without_the_bs.out' has not changed.
 (rerunfilecheck)             Checksum: 28480366081F464118EE6DAC06081102;2141.
  ) 
 Here is how much of TeX's memory you used:
- 39610 strings out of 474975
- 897467 string characters out of 5750796
- 1594931 words of memory out of 5000000
- 60367 multiletter control sequences out of 15000+600000
+ 40044 strings out of 474975
+ 910081 string characters out of 5750796
+ 1597931 words of memory out of 5000000
+ 60797 multiletter control sequences out of 15000+600000
  597784 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,103p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,103p,728b,1768s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/opt/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/opt/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on build/ML_without_the_bs.pdf (9 pages, 154248 bytes).
+Output written on build/ML_without_the_bs.pdf (11 pages, 160958 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

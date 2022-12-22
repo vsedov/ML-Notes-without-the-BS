@@ -163,7 +163,11 @@ To deal with duplicate values, we can first sort the list in descending order of
 \end{itemize}
 
 \subsection{Example}
-Take our original data\\
+Take our original data Where we want to calculate the following\\
+\begin{itemize}
+	\item P\_value
+	\item Conformity Score
+\end{itemize}
 \end{center}
 \begin{center}
 	\begin{tabular}{|c|c|c|}
@@ -194,4 +198,146 @@ To calculate the conformity scores and p-values for the conformity measure "the 
 	\item Divide the number of conformity scores that are less than or equal to the conformity score of the test sample by the total number of conformity scores plus one, to get the p-value.
 \end{itemize}
 
+
 \paragraph{Calcuation}
+
+
+\begin{center}
+	\begin{tabular}{ccc}
+		\hline
+		Sample   & Label & Conformity score                                  \\
+		\hline
+		(0, 3)   & +1    & $\frac{2}{\sqrt{4} + 1} \approx 0.894$            \\
+		(2, 2)   & +1    & $\frac{\sqrt{4} + 1}{\sqrt{1} + 1} \approx 1.581$ \\
+		(3, 3)   & +1    & $\frac{\sqrt{9} + 4}{\sqrt{1} + 1} \approx 2.550$ \\
+		(-1, 1)  & -1    & $\frac{\sqrt{1} + 1}{1} \approx 1.414$            \\
+		(-1, -1) & -1    & $\frac{\sqrt{1} + 1}{2} \approx 0.707$            \\
+		(0, 1)   & -1    & $\frac{1}{1} = 1$                                 \\
+		(0, 0)   & +1    & $(?) \frac{1}{\sqrt{4} + 4} \approx 0.354$        \\
+		\hline
+	\end{tabular}
+\end{center}
+Graphical Representation :\\
+\hspace*{-0.6cm}\begin{tikzpicture}
+	\begin{axis}[
+			xlabel={$x$},
+			ylabel={Conformity score},
+			xmin=-2.5, xmax=4,
+			ymin=0, ymax=3,
+		]
+		\addplot[
+			red,
+			mark=x,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(0,0.894)
+			};
+		\addplot[
+			red,
+			mark=x,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(2,1.581)
+			};
+		\addplot[
+			red,
+			mark=x,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(3,2.550)
+			};
+		\addplot[
+			blue,
+			mark=square,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(-1,1.414)
+			};
+		\addplot[
+			blue,
+			mark=square,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(-1,0.707)
+			};
+		\addplot[
+			blue,
+			mark=square,
+			mark size=4pt,
+			only marks,
+		] coordinates {
+				(0,1)
+			};
+		\draw[red] (0,0.894) -- (0,0);
+		\draw[red] (2,1.581) -- (2,0);
+		\draw[red] (3,2.550) -- (3,0);
+		\draw[blue] (-1,1.414) -- (-1,0);
+		\draw[blue] (-1,0.707) -- (-1,0);
+		\draw[blue] (0,1) -- (0,0);
+	\end{axis}
+\end{tikzpicture}
+\begin{tabular}{c c c}
+	\hline
+	Sample   & Label & Conformity score difference \\ [0.5ex]
+	\hline
+	(0, 3)   & +1    & 0.894                       \\
+	(2, 2)   & +1    & 1.581                       \\
+	(3, 3)   & +1    & 2.550                       \\ [1ex]
+	\hline
+	(−1, 1)  & −1    & 1.414                       \\
+	(−1, −1) & −1    & 0.707                       \\
+	(0, 1)   & −1    & 1                           \\ [1ex]
+	\hline
+\end{tabular}
+The conformity score of a sample can also be represented using the following equation:
+
+$$ \alpha = d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff}) $$
+
+In this equation, $\alpha$ represents the conformity score of the sample, $\mathbf{x}$ represents the coordinates of the sample, and $d(\mathbf{x}, \mathbf{x}\text{NN}^\text{diff})$ represents the distance between the sample and its nearest neighbor of a different class. The nearest neighbor of a different class is represented by $\mathbf{x}\text{NN}^\text{diff}$.
+
+For example, to calculate the conformity score of the first positive sample (0, 3), you can use the following equation:
+
+$$ \alpha = d((0, 3), (-1, -1)) $$
+
+This equation calculates the distance between the first positive sample (0, 3) and its nearest neighbor of a different class (-1, -1). The distance can be calculated using the Euclidean distance formula:
+
+$$ d((0, 3), (-1, -1)) = \sqrt{(-1 - 0)^2 + (-1 - 3)^2} = 2 $$
+
+Substituting this value into the conformity score equation gives:
+
+$$ \alpha = \frac{2}{\sqrt{4} + 1} = 0.894 $$
+
+This calculation can be repeated for each sample in the dataset to obtain the conformity scores for all samples.
+
+\paragraph{Prediction and how does ranking work ? }
+To calculate the p-value using the ranking method, you need to rank all conformity scores in ascending order. The p-value for a particular label is then calculated by dividing the rank of the conformity score for that label by the total number of samples in the dataset, including the test sample.
+
+For example, to calculate the p-value for the label +1 in the given dataset, you can first rank all conformity scores in ascending order as follows:
+
+0.707, 0.894, 1.414, 1.581, 2.550, 0.354
+
+The conformity score for the label +1 (0.354) is the sixth smallest conformity score. Therefore, the p-value for the label +1 is calculated as follows:
+
+$$ p(\text{+1}) = \frac{6}{7} = 0.857 $$
+
+Similarly, the p-value for the label -1 is calculated as follows:
+
+$$ p(\text{-1}) = \frac{1}{7} = 0.143 $$
+
+The p-values for all labels can be calculated in this way, and the prediction set can then be determined by comparing the p-values to the significance level $\epsilon$. If a p-value is greater than $\epsilon$, the corresponding label is included in the prediction set. For example, if the significance level is set to $\epsilon = 0.1$, then the prediction set for the given dataset would be $\Gamma_{0.1} = {\text{-1}}$, since the p-value for the label -1 (0.143) is greater than $\epsilon$.
+
+\paragraph{Ranking}
+In the ranking method, the conformity score for the test sample is compared to the conformity scores for all other samples in the dataset. If the conformity score for the test sample is the smallest (or largest), it gets a rank of 1 (or the total number of samples). If the conformity score for the test sample is the second smallest (or second largest), it gets a rank of 2 (or the total number of samples minus 1). This process continues until the conformity score for the test sample is ranked.
+
+In the given dataset, the conformity score for the test sample (0.354) is the sixth smallest conformity score. Therefore, it gets a rank of 6. The total number of samples in the dataset, including the test sample, is 7. Therefore, the p-value for the label +1 is calculated as follows:
+
+$$ p(\text{+1}) = \frac{6}{7} = 0.857 $$
+
+Similarly, the conformity score for the label -1 (0.707) is the smallest conformity score and gets a rank of 1. The p-value for the label -1 is calculated as follows:
+$$ p(\text{-1}) = \frac{1}{7} = 0.143 $$
+This is why the p-values for the labels +1 and -1 are 6/7 and 1/7, respectively.

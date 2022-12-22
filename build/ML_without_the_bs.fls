@@ -1223,6 +1223,7 @@ INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/cuted.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/cuted.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/cuted.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/cuted.sty
+INPUT /opt/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/flushend.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/flushend.sty
 INPUT /opt/texlive/2022/texmf-dist/tex/latex/sttools/flushend.sty
