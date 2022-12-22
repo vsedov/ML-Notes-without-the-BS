@@ -5,3 +5,12 @@
 \contentsline {section}{\numberline {2}Introduction To NN}{4}{}%
 \contentsline {subsection}{\numberline {2.1}How does it work ? }{4}{}%
 \contentsline {subsubsection}{\numberline {2.1.1}Step by step guide on how NN works}{4}{}%
+\contentsline {subsection}{\numberline {2.2}KNN}{5}{}%
+\contentsline {paragraph}{Cosine Distance, Eulcidian Distance}{5}{}%
+\contentsline {paragraph}{Better Example}{6}{}%
+\contentsline {section}{\numberline {3}Conformal Prediction}{7}{}%
+\contentsline {paragraph}{Properties}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Explanation of Algo}{7}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Special Cases}{8}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Assumptions towards Conformity}{8}{}%
+\contentsline {subsection}{\numberline {3.2}Conformity Measure for KNN (K=1)}{9}{}%
