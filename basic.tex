@@ -1,0 +1,70 @@
+\section{Types of Learning}
+\begin{itemize}
+	\item Supervised Learning
+	      \begin{itemize}
+		      \item Algo is trained on labeled data
+		      \item meaning that the data has been labeled with the correct output
+		      \item \textit{Goal: } is to make predictions about new unseen data based on patterns learned from the training data.
+		      \item Examples
+		            \begin{itemize}
+			            \item Linear Regerssion
+			            \item Logistic Regression
+			            \item Support vector Machines
+			            \item Classficiation problems : Binary or Multi Class
+		            \end{itemize}
+	      \end{itemize}
+	\item Unsupervised Learning
+	      \begin{itemize}
+		      \item The algo is not given any labeled data and must find the patterns and relashinships on its own.
+		      \item \textit{Goal: } Is to discover structure in the data and to identify relationships bsed on that structure.
+		      \item Examples:
+		            \begin{itemize}
+			            \item Clustering
+			            \item Dimensionality reduction [ Really cool concept ]
+		            \end{itemize}
+	      \end{itemize}
+	\item Reinforcement Learning
+	      \begin{itemize}
+		      \item The learning algo is not given any labeled data and must find patterns and relationships in the data on its won.
+		      \item \textit{Goal : } is to discover structure, but based on its own ability to generalise and understand the current scope of what it can learn from.
+		      \item Examples:
+		            \begin{itemize}
+			            \item Self driving cars
+			            \item Those small little hoovers that move around on their own. Question your self how do they map everything.
+		            \end{itemize}
+	      \end{itemize}
+
+\end{itemize}
+
+\subsection{Supervised Learning}
+\textit{Due to this module purely focusing on this, i will pick certain info that i deem viable}\\
+
+\paragraph{Features}
+\begin{itemize}
+	\item Components of samples are features
+	\item Each feature can be \italic{descrete} or \italic{continuous} $ [0, \infty )$
+\end{itemize}
+
+\paragraph{Protocols used in supervised Learning}
+There are two core protocols that are used within supervised learning:
+\italic{Batch} and \italic{Online} | Just google this, the explanation on the slides are bad.
+
+\subsubsectin{Batch Learning}
+In batch learning, there are two core steps, and stages that you have to work with
+\begin{itemize}
+	\item Training: Exploration stage - You analyse the data, and the training set - and find some viable explanation for why it works
+	\item Exploitation stage: Pretty much saying does this hypothesis work with repsect to what the training data had presented.
+\end{itemize}
+
+\begin{definition}[Induction]
+	Induction is a form of learning that involves making generalizations based on specific examples or observations. In induction, the goal is to learn a general rule or model that can be applied to new, unseen data. This is the approach used in many supervised learning algorithms, where the algorithm is trained on a labeled dataset and then makes predictions about new, unseen data based on the patterns learned from the training data.
+
+	\italic{has a model}
+\end{definition}
+
+\begin{definition}[Transduction]
+	Transduction is a form of learning that involves making predictions about a specific instance based on the available information. In transduction, the goal is to make a prediction about a specific case rather than learning a general rule that can be applied to new data. This is the approach used in many unsupervised learning algorithms, where the algorithm is given a dataset but is not told what the correct output should be. Instead, the algorithm must find patterns and relationships in the data on its own and use that information to make a prediction about a specific instance.
+
+	\italic{No model}
+\end{definition}
+The main difference between induction and transduction is that induction involves learning a general rule or model that can be applied to new data, while transduction involves making a prediction about a specific instance based on the available information.

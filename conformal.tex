@@ -1,0 +1,197 @@
+\section{Conformal Prediction}
+\begin{definition}
+	Conformal prediction is a method of making predictions that is designed to provide a measure of confidence or uncertainty in the prediction. It is based on the idea of creating a prediction region, or "conformal prediction set," around a new data point, which contains a range of possible values for the prediction. The prediction is considered "valid" if the true value of the data point falls within this region.
+
+	The mathematical formula for conformal prediction is as follows:
+	\begin{displaymath}
+		P(\text{true label} \in \text{prediction set}) \geq 1 - \alpha
+
+	\end{displaymath}
+	Here, $P(\text{true label} \in \text{prediction set})$ is the probability that the true label of the data point falls within the prediction set, and $\alpha$ is a user-specified confidence level, typically set to a small value such as 0.1 or 0.05.
+
+	Conformal prediction is used to provide a measure of uncertainty in predictions, which can be useful in situations where it is important to know how confident we are in a prediction. For example, in medical diagnosis, it may be important to know how certain we are that a patient has a particular disease, in order to make informed treatment decisions. In such cases, conformal prediction can be used to provide a range of possible diagnoses, along with a corresponding confidence level.
+
+	Conformal prediction is also used in situations where the data is noisy or uncertain, as it can provide a way to account for this uncertainty in the predictions. This is especially useful when working with complex or high-dimensional data, where the relationship between the features and the target variable may be difficult to model accurately.
+\end{definition}
+\paragraph{Properties}
+\begin{itemize}
+	\item Guaranteed validity - with respect to probability of error
+	\item Commonplace in stats - Confidence Intervals, prediction intervals.
+\end{itemize}
+
+\subsection{Explanation of Algo}
+The high level idea behind conformal prediction is to create a prediction set or region, around a new data point that contains a rage of possible values for the prediction. This prediction set is constructed using the conformity scores and the p\_value of the data points of the training and test values
+
+\begin{itemize}
+	\item Given a training set of data points $z_1, z_2, ..., z_n$ and a new test sample $x*$, we first compute the conformity scores, or p-values, for each possible label $y$ for the test sample.
+	\item The conformity score for a particular label $y$ is calculated as the number of training data points with conformity scores less than or equal to the conformity score of the test sample, divided by the total number of training data points plus one. This is represented by the formula:
+	      $$ p(y) = \frac{#{i = 1, ..., n+1 | \alpha_y^i \leq \alpha_y^{n+1}}}{n+1} $$
+
+	      where $\alpha_y^1, ..., \alpha_y^n, \alpha_y^{n+1}$ are the conformity scores corresponding to $z_1, ..., z_n, (x*, y)$.
+\end{itemize}
+
+\begin{itemize}
+	\item Given a significance level $\epsilon > 0$ (our target probability of error), we can then compute the corresponding prediction set $\Gamma_\epsilon = {y \in Y | p(y) > \epsilon}$. This is the set of labels that are considered "valid" predictions for the test sample, as they have a probability of error less than or equal to $\epsilon$.
+	\item To make a prediction for the test sample, we can choose the label with the highest conformity score, or we can select the label with the highest conformity score that falls within the prediction set $\Gamma_\epsilon$. This allows us to balance the trade-off between accuracy and confidence in the prediction.
+\end{itemize}
+Overall, the goal of conformal prediction is to provide a measure of confidence or uncertainty in the prediction, by constructing a prediction set that contains a range of possible values for the prediction, rather than a single point estimate. This can be useful in situations where it is important to know how confident we are in a prediction, or where the data is noisy or uncertain.
+
+\subsubsection{Special Cases}
+Most cases it is important to understand how strange our data is. This refers to how different a data point is from the rest of the training data. A dta point with a high degree of strangeness is one that is significantly different from the other data points in the training set.
+
+The special cases are of the following: \italic{Because the slides are shit}
+\begin{itemize}
+	\item If the test sample has the highest conformity score. Of all the data points in the training set. This means that it is the most strange data point. In this case the conformity score of the test sample will be $ \frac{1}{n+1} $ Which is the smallest possible value.
+	\item If the test sample has the second highest conformity score of all the data points in the training set, this means that it is the second most strange data. In this case it will have a conformity score of the test
+	      $\frac{2}{n+1}$
+	\item If the test sample has the lowest conformity score of all the data points in the training set, this means that it is the most "conforming" data point. In this case, the conformity score of the test sample will be 1.
+
+\end{itemize}
+These special cases illustrate how the conformity score of the test sample is influenced by its relationship to the conformity scores of the training data points. In general, the higher the conformity score of the test sample, the more "strange" it is relative to the training data, and the lower the conformity score, the more "conforming" it is. This is important to consider when constructing the prediction set, as the conformity scores of the test sample and the training data points are used to determine which labels are considered "valid" predictions for the test sample.
+
+\subsubsection{Assumptions towards Conformity}
+The assumptions of machine learning refer to the assumptions that are made about the data and the learning process when building and using machine learning models. These assumptions can vary depending on the type of model and the specific problem being solved, but they generally include assumptions about the structure of the data, the relationship between the features and the target variable, and the nature of the learning process itself.
+
+Conformal prediction is a method of making predictions that is designed to provide a measure of confidence or uncertainty in the prediction. It is based on the idea of creating a prediction region, or "conformal prediction set," around a new data point, which contains a range of possible values for the prediction. The prediction is considered "valid" if the true value of the data point falls within this region.
+
+Conformal prediction based on nearest neighbors is a specific approach to conformal prediction that uses the k-nearest neighbors (KNN) algorithm to find the nearest neighbors of a new data point and use their labels to make a prediction. The conformity scores of the data points are calculated using the KNN distances, and the prediction set is constructed based on these conformity scores.
+
+The validity and efficiency of conformal predictors refer to the properties of the prediction set that is constructed around a new data point. Validity refers to the probability that the true label of the data point falls within the prediction set, which is typically set to a user-specified value such as 0.1 or 0.05. Efficiency refers to the size of the prediction set, with smaller prediction sets being considered more efficient.
+
+The validity of conformal predictors is ensured by the property that the predictor makes a mistake with probability at most $\epsilon$, provided that the labeled samples are independently and identically distributed (IID). This means that the probability of the true label falling outside of the prediction set is at most $\epsilon$.
+
+The efficiency of conformal predictors can be traded off against their validity. In general, smaller prediction sets are more efficient, but they may also be less accurate, as they may not contain a wide enough range of possible values for the prediction. On the other hand, larger prediction sets may be more accurate, but they may also be less efficient. It is important to consider both validity and efficiency when using conformal prediction, in order to find the optimal balance between these two properties.
+
+
+\subsection{Conformity Measure for KNN (K=1)}
+There are several different conformity measures that can be used with the 1-nearest neighbor (1-NN) algorithm for conformal prediction. Here is an explanation of two of these measures:
+
+The distance to the nearest sample of a different class: This conformity measure is based on the idea that a data point that is more similar to data points from a different class is more likely to be classified correctly. In other words, if the nearest neighbor of a data point belongs to a different class, this may be a good indication that the data point is correctly classified.
+
+The conformity score for this measure can be calculated as the distance between the data point and its nearest neighbor of a different class. For example, if the data point is classified as class A and its nearest neighbor is classified as class B, the conformity score would be the distance between the two points.
+
+This conformity measure can be represented mathematically as follows:
+
+$$ \alpha = d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff}) $$
+
+where $\alpha$ is the conformity score, $\mathbf{x}$ is the data point, and $\mathbf{x}_\text{NN}^\text{diff}$ is the nearest neighbor of a different class.
+
+One over the distance to the nearest sample of the same class: This conformity measure is based on the opposite idea, that a data point that is more similar to data points from the same class is more likely to be classified correctly. In other words, if the nearest neighbor of a data point belongs to the same class, this may be a good indication that the data point is correctly classified.
+
+The conformity score for this measure can be calculated as the reciprocal of the distance between the data point and its nearest neighbor of the same class. For example, if the data point is classified as class A and its nearest neighbor is also classified as class A, the conformity score would be the reciprocal of the distance between the two points.
+
+This conformity measure can be represented mathematically as follows:
+
+$$ \alpha = \frac{1}{d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{same})} $$
+
+where $\alpha$ is the conformity score, $\mathbf{x}$ is the data point, and $\mathbf{x}_\text{NN}^\text{same}$ is the nearest neighbor of the same class.
+
+Both of these conformity measures are based on the distance between the data point and its nearest neighbors, with the first measure using the distance to the nearest neighbor of a different class and the second measure using the distance to the nearest neighbor of the same class.
+
+The first conformity measure, which uses the distance to the nearest neighbor of a different class, may be more suitable in situations where the classes are well-separated and the data points from different classes are significantly different from one another. In such cases, the distance to the nearest neighbor of a different class may provide a good indication of the confidence of the prediction.
+
+On the other hand, the second conformity measure, which uses the distance to the nearest neighbor of the same class, may be more suitable in situations where the classes are more overlapping and the data points from different classes are more similar to one another. In such cases, the distance to the nearest neighbor of the same class may provide a better indication of the confidence of the prediction.
+
+\subsection{Ranking Algo}
+\textit{It is a stupid algo, as simple as it May look, for some reason it can become quite jaring to figure out. This should debunk majority of its bullshit}
+
+\begin{definition}
+	A ranking algorithm is a method for ordering a list of items according to some criterion. The criterion could be based on a variety of factors, such as relevance, popularity, or quality.
+	We will use this for the p\_value, to rank items that will have the same probability
+\end{definition}
+
+\subsubsection{Example}
+Imagine we have a list of students and their grades on a test, and we want to rank the students by their grades. The list looks like this:
+\begin{center}
+	\begin{tabular}{ |c| c| }
+		\hline
+		Student & Grade \\
+		\hline
+		Alice   & 90    \\
+		Bob     & 80    \\
+		Charlie & 90    \\
+		Dave    & 70    \\
+		Eve     & 80    \\
+		Frank   & 60    \\
+
+		\hline
+	\end{tabular}
+\end{center}
+
+To deal with duplicate values, we can first sort the list in descending order of grades. This will group the students with the same grade together:
+
+\begin{center}
+	\begin{tabular}{ |c|c| }
+
+		\hline
+		Student & Grade \\
+		\hline
+		Alice   & 90    \\
+		Charlie & 90    \\
+		Bob     & 80    \\
+		Eve     & 80    \\
+		Dave    & 70    \\
+		Frank   & 60    \\
+		\hline
+	\end{tabular}
+\end{center}
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Rank & Student & Grade \\
+		\hline
+		1    & Alice   & 90    \\
+		2    & Charlie & 90    \\
+		3    & Bob     & 80    \\
+		3    & Eve     & 80    \\
+		4    & Dave    & 70    \\
+		5    & Frank   & 60    \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{itemize}
+	\item Sort the list in descending order of grades.
+	\item Initialize the rank to 1.
+	\item For each student in the list:
+	      \begin{itemize}
+		      \item If the student has a higher grade than the previous student, increment the rank by 1.
+		      \item If the student has the same grade as the previous student, do not increment the rank.
+		      \item Assign the rank to the student.
+	      \end{itemize}
+	\item return Ranked List
+\end{itemize}
+
+\subsection{Example}
+Take our original data\\
+\end{center}
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Sample  & Label \\
+		\hline
+		(0,3)   & +1    \\
+		(2,2)   & +1    \\
+		(3,3)   & +1    \\
+		(-1,1)  & -1    \\
+		(-1,-1) & -1    \\
+		(0,1)   & -1    \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+For example, consider a dataset with two labels, 0 and 1, and a feature set containing two features, $x_1$ and $x_2$. Where $x_1 = 0 $ and $x_2 = 0$.
+
+\paragraph{Steps}
+To calculate the conformity scores and p-values for the conformity measure "the distance to the nearest sample of a different class divided by the distance to the nearest sample of the same class," you can follow these steps:
+
+\begin{itemize}
+	\item For each sample in the training set, calculate the conformity score for the given conformity measure. To do this, you will need to compute the distance to the nearest sample of a different class and the distance to the nearest sample of the same class. For example, for the positive sample $(0, 3)$, the conformity score would be calculated as $\frac{2}{\sqrt{4} + 1} \approx 0.894$, where 2 is the distance to the nearest negative sample $(-1, 1)$ and $\sqrt{4} + 1$ is the distance to the nearest positive sample $(2, 2)$.
+	\item Repeat the calculation for the test sample, using the label you are interested in. For example, if you are interested in the p-value for the positive label, you would calculate the conformity score for the test sample $(0, 0)$ with the label +1. The conformity score for the test sample with the positive label would be calculated as $\frac{1}{\sqrt{4} + 4} \approx 0.354$, where 1 is the distance to the nearest negative sample $(-1, -1)$ and $\sqrt{4} + 4$ is the distance to the nearest positive sample $(3, 3)$.
+	\item Sort the conformity scores of the training samples, including the conformity score of the test sample, in ascending order.
+	\item Count the number of conformity scores that are less than or equal to the conformity score of the test sample.
+	\item Divide the number of conformity scores that are less than or equal to the conformity score of the test sample by the total number of conformity scores plus one, to get the p-value.
+\end{itemize}
+
+\paragraph{Calcuation}

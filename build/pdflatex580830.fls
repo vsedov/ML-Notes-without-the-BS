@@ -1,0 +1,4 @@
+PWD /home/viv/GitHub/Notes/ML-Notes-without-the-BS
+INPUT /opt/texlive/2022/texmf.cnf
+INPUT /opt/texlive/2022/texmf-dist/web2c/texmf.cnf
+INPUT /opt/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
