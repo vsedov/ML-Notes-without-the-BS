@@ -1,7 +1,6 @@
 \section{Conformal Prediction}
 \begin{definition}
 	Conformal prediction is a method of making predictions that is designed to provide a measure of confidence or uncertainty in the prediction. It is based on the idea of creating a prediction region, or "conformal prediction set," around a new data point, which contains a range of possible values for the prediction. The prediction is considered "valid" if the true value of the data point falls within this region.
-
 	The mathematical formula for conformal prediction is as follows:
 	\begin{displaymath}
 		P(\text{true label} \in \text{prediction set}) \geq 1 - \alpha
@@ -72,19 +71,24 @@ The conformity score for this measure can be calculated as the distance between 
 
 This conformity measure can be represented mathematically as follows:
 
-$$ \alpha = d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff}) $$
 
-where $\alpha$ is the conformity score, $\mathbf{x}$ is the data point, and $\mathbf{x}_\text{NN}^\text{diff}$ is the nearest neighbor of a different class.
 
-One over the distance to the nearest sample of the same class: This conformity measure is based on the opposite idea, that a data point that is more similar to data points from the same class is more likely to be classified correctly. In other words, if the nearest neighbor of a data point belongs to the same class, this may be a good indication that the data point is correctly classified.
+One over the distance to the nearest sample of the same class:
+This conformity measure is defined as follows:
+$$ \alpha = \frac{1}{d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{Same})} $$
+where $\mathbf{x}$ is the test sample, $\mathbf{x}_\text{NN}^\text{Same}$ is the nearest sample of the same class as $\mathbf{x}$, and $d(\cdot, \cdot)$ is a distance function that measures the distance between two samples. This conformity measure assigns a higher score to test samples that are closer to their nearest same-class sample, and a lower score to test samples that are farther away.
 
-The conformity score for this measure can be calculated as the reciprocal of the distance between the data point and its nearest neighbor of the same class. For example, if the data point is classified as class A and its nearest neighbor is also classified as class A, the conformity score would be the reciprocal of the distance between the two points.
+The distance to the nearest sample of a different class divided by the distance to the nearest sample of the same class:
+This conformity measure is defined as follows:
+$$ \alpha = \frac{d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff})}{d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{Same})} $$
+where $\mathbf{x}$ is the test sample, $\mathbf{x}_\text{NN}^\text{diff}$ is the nearest sample of a different class as $\mathbf{x}$, and $\mathbf{x}_\text{NN}^\text{same}$ is the nearest sample of the same class as $\mathbf{x}$. This conformity measure assigns a higher score to test samples that are closer to their nearest different-class sample and farther away from their nearest same-class sample, and a lower score to test samples that are farther away from their nearest different-class sample and closer to their nearest same-class sample.
 
-This conformity measure can be represented mathematically as follows:
 
-$$ \alpha = \frac{1}{d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{same})} $$
 
-where $\alpha$ is the conformity score, $\mathbf{x}$ is the data point, and $\mathbf{x}_\text{NN}^\text{same}$ is the nearest neighbor of the same class.
+
+
+
+
 
 Both of these conformity measures are based on the distance between the data point and its nearest neighbors, with the first measure using the distance to the nearest neighbor of a different class and the second measure using the distance to the nearest neighbor of the same class.
 
@@ -298,7 +302,7 @@ The conformity score of a sample can also be represented using the following equ
 
 $$ \alpha = d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff}) $$
 
-In this equation, $\alpha$ represents the conformity score of the sample, $\mathbf{x}$ represents the coordinates of the sample, and $d(\mathbf{x}, \mathbf{x}\text{NN}^\text{diff})$ represents the distance between the sample and its nearest neighbor of a different class. The nearest neighbor of a different class is represented by $\mathbf{x}\text{NN}^\text{diff}$.
+In this equation, $\alpha$ represents the conformity score of the sample, $\mathbf{x}$ represents the coordinates of the sample, and $d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff})$ represents the distance between the sample and its nearest neighbor of a different class. The nearest neighbor of a different class is represented by $\mathbf{x}_\text{NN}^\text{diff}$.
 
 For example, to calculate the conformity score of the first positive sample (0, 3), you can use the following equation:
 
@@ -342,50 +346,95 @@ Similarly, the conformity score for the label -1 (0.707) is the smallest conform
 $$ p(\text{-1}) = \frac{1}{7} = 0.143 $$
 This is why the p-values for the labels +1 and -1 are 6/7 and 1/7, respectively.
 
-\subsection{Using Modified competition ranking}
-Modified competition ranking is a method of ranking items or individuals based on their performance in a competition. It is similar to traditional competition ranking, but it takes into account the strength of the competition.
 
-To calculate modified competition ranking, the following steps are typically followed:
+\subsection{Things that I wish I had known about}
 \begin{itemize}
-	\item Calculate the average score of each participant in the competition.
-	\item Calculate the average score of the entire competition.
-	\item Calculate the difference between the average score of each participant and the average score of the competition.
-	\item Rank the participants based on this difference, with the highest difference ranked first.C
-\end{itemize}
-For example, consider a competition with three participants who score the following points:
-
-\begin{itemize}
-	\item Participant 1: 10 points
-	\item Participant 2: 20 points
-	\item Participant 3: 30 points
+	\item You rank through lowest to highest with respect to the item, that you are labelling.
+	\item You do not need to skip numbers, just label them based on what they are.
+	      1 2 3 4 5
+	\item On labeling, mark your target value, and $\alpha = x/n $
+	\item your confidence is mostly $ (1-\alpha) $
 \end{itemize}
 
-The average score of the competition is 20 points. The differences between each participant's average score and the average score of the competition are as follows:
 
-\begin{itemize}
-	\item Participant 1: 10 - 20 = -10
-	\item Participant 2: 20 - 20 = 0
-	\item  Participant 3: 30 - 20 = 10
-\end{itemize}
-This method of ranking takes into account the strength of the competition and can be useful in situations where the competition is particularly competitive or where there is a wide range of scores. It is often used in sports, where the strength of the competition can vary significantly from one match or tournament to another.
-
-\subsection{Modified Ranking Algorithm on New solution}
-Consider the following using modified ranking to sort the conformity scores:
-
+\newpage
 \section{Non Conformity}
-\begin{definition}[Non Conformity]
-	Nonconformity measures: Nonconformity measures are used in conjunction with conformal prediction to measure how "strange" (or different) a new data point is from the training set. This can be used to construct prediction intervals that reflect the level of uncertainty around the predicted value.
-	Nonconformity measures (1): Nonconformity measures are defined in the same way as conformity measures, but their interpretation is different. While conformity measures measure how "conforming" a new data point is to the training set, nonconformity measures measure how "strange" or different it is. The formula for computing p-values using nonconformity measures is similar to the formula for conformity measures, but with the inequality sign reversed.
+\begin{definition}[Non Conformitu]
+	Nonconformity measures are defined in the same way as conformity measures, but with a different interpretation: $\alpha_i$ measures how strange (rather than how conforming) $z_i$ is. The formula for computing p-values becomes:
+
+	$$ p(y) = \frac{#{i = 1, ..., n+1 | \alpha_y^i \geq \alpha_y^{n+1}}}{n+1} $$
+
+	Note that the only difference between this formula and the one for conformity measures is that the inequality symbol has been flipped from $\leq$ to $\geq$.
+
+	Instead of using nonconformity scores $\alpha_i$, one can also use conformity scores $-\alpha_i$ (or $\frac{1}{\alpha_i}$ if $\alpha_i$ are positive). However, in the context of regression, nonconformity scores are often more convenient.
 \end{definition}
-\begin{itemize}
-	\item Given a training set of data points $z_1, z_2, ..., z_n$ and a new test sample $x*$, we first compute the conformity scores, or p-values, for each possible label $y$ for the test sample.
-	\item The conformity score for a particular label $y$ is calculated as the number of training data points with conformity scores less than or equal to the conformity score of the test sample, divided by the total number of training data points plus one. This is represented by the formula:
-	      $$ p(y) = \frac{#{i = 1, ..., n+1 | \alpha_y^i \geq \alpha_y^{n+1}}}{n+1} $$
 
-	      where $\alpha_y^1, ..., \alpha_y^n, \alpha_y^{n+1}$ are the conformity scores corresponding to $z_1, ..., z_n, (x*, y)$.
-\end{itemize}
-In conformity measures, the measure is used to determine how closely a sample conforms to the rest of the training data. This is typically used in classification tasks, where the goal is to predict the class label of a sample based on its similarity to the training data. The conformity measure is used to determine the probability that the sample belongs to a particular class.
 
-On the other hand, nonconformity measures are used to determine how unusual or different a sample is from the rest of the training data. This is typically used in regression tasks, where the goal is to predict a continuous value based on the training data. The nonconformity measure is used to determine the probability that the sample is an outlier or an unusual sample, rather than one that conforms to the general trend of the training data.
 
-The formula for computing p-values for nonconformity measures is similar to that for conformity measures, with the main difference being that the inequality is reversed. In the formula for nonconformity measures, p(y) is the probability that the sample belongs to class y, and the nonconformity measure is used to count the number of samples that are more unusual (have a higher nonconformity measure) than the test sample, and divide by the total number of samples in the training set. This gives the probability that the test sample belongs to class y, given its unusualness compared to the rest of the training data.
+A common way to measure nonconformity is to use a conformity measure, but with the opposite interpretation. In other words, instead of measuring how similar a sample is to the training data, nonconformity measures how dissimilar or abnormal a sample is.
+
+Formally, nonconformity can be defined as follows:
+
+$$ \alpha = \max\left{0, d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{same}) - d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff})\right} $$
+
+where $d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{same})$ is the distance from the sample $\mathbf{x}$ to its nearest neighbor of the same class, and $d(\mathbf{x}, \mathbf{x}_\text{NN}^\text{diff})$ is the distance from the sample $\mathbf{x}$ to its nearest neighbor of a different class.
+
+This equation ensures that nonconformity is always non-negative and that a sample is considered abnormal if its nearest neighbor of the same class is farther away than its nearest neighbor of a different class.
+
+Nw consider the following example :
+\begin{center}
+	\begin{tabular}{ c c c }
+		positive & Negative \\
+		\hline
+		0        & 11       \\
+		\hline
+		1        & 10
+	\end{tabular}
+\end{center}
+Let the training set be ${(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)}$ and the test sample be $(x_{n+1}, y_{n+1})$. The conformity measure for the $i$-th sample is denoted by $\alpha_i$.
+
+For the postulated label $y_{n+1} = +1$, the p-value is given by
+
+$$ p(+1) = \frac{#{i \mid 1 \leq i \leq n+1, \alpha_i \geq \alpha_{n+1}}}{n+1} = \frac{1}{5} = 0.2 $$
+
+For the postulated label $y_{n+1} = -1$, the p-value is given by
+
+$$ p(-1) = \frac{#{i \mid 1 \leq i \leq n+1, \alpha_i \geq \alpha_{n+1}}}{n+1} = \frac{5}{5} = 1 $$
+
+The average false p-value is 0.5 (computed as $(0.2 + 1)/2$).
+
+Our test value will always have priority when sorting the items .
+One way to represent this mathematically is to use a function $p(x)$ that returns the priority of a given element $x$. For example, in the given set $x$, we can define the function as follows:
+
+$$p(x) = \begin{cases} 100 & \text{if } x = 1:100 \ 50 & \text{otherwise} \end{cases}$$
+
+This function assigns a priority of 100 to the element $x = 1:100$, and a priority of 50 to all other elements.
+
+To sort the elements in the set $x$ according to their priority, we can use a sorting algorithm that takes the priority into account. For example, we can use a sorting algorithm that sorts the elements in ascending order of their priority. In this case, the element with a priority of 100 would be placed first, followed by the elements with a priority of 50.
+
+
+\subsection{Two Forms of Non conformity}
+The first nonconformity measure is simply the absolute difference between the actual value, $y_i$, and the predicted value, $\hat{y}_i$. This measure is simple to compute and understand, and it provides a straightforward way to gauge the strangeness of a given sample.
+
+The second nonconformity measure adds an additional term, $\sigma_i$, which represents an estimate of the accuracy of the prediction. This measure is useful because it takes into account the uncertainty of the prediction, which can be particularly important in cases where the predicted values have a high degree of variability. The size of the prediction set is more adaptive because the measure adjusts to the uncertainty of the prediction, which means that it is more sensitive to samples that are farther away from the predicted value.
+
+Mathematically, these nonconformity measures can be expressed as follows:
+
+$$ \alpha_i = \left| y_i - \hat{y}_i \right| $$
+
+$$ \alpha_i = \frac{\left| y_i - \hat{y}_i \right|}{\sigma_i} $$
+
+In both cases, the larger the value of $\alpha_i$, the more strange the sample is considered to be.
+
+\subsection{Validty and efficiency of conformal predictions}
+The probability that $y^* \not\in \Gamma_{\frac{1}{n+1}}$ can be represented mathematically as:
+
+$$P(y^* \not\in \Gamma_{\frac{1}{n+1}})$$
+
+This probability is equal to the probability that $z^* = (x^, y^)$ is the strangest labeled sample in the set $z_1, ..., z_n, z^*$. This can be expressed as:
+
+$$P(z^* = \text{strangest labeled sample in } z_1, ..., z_n, z^*)$$
+
+By the IID (Independent and Identically Distributed) assumption, all permutations of $z_1, ..., z_n, z^*$ (and the corresponding permutations of $\alpha_1, ..., \alpha_n, \alpha_{n+1}$) have the same probability. Therefore, the probability that the smallest conformity score in the bag ${\alpha_1, ..., \alpha_{n+1}}$ will be the last one is exactly $\frac{1}{n+1}$ (provided there is only one smallest element in the bag; otherwise the probability of error will be less, 0). This can be represented mathematically as:
+
+$$P(\text{smallest conformity score in } {\alpha_1, ..., \alpha_{n+1}} \text{ is the last one}) = \frac{1}{n+1}$$
